@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block head_title %}
+	{{ title }} | {{ block.super}} 
+{% endblock head_title %}
+
+{% block content %}
+
+<h1>Add PE without Client!</h1>
+
+<div class='container'> 
+	<a href='/home/'>Back</a> 
+</div>
+
+<div class='container'> 
+	<form method="POST" action="."> {% csrf_token %}
+	    {{ form.as_p }}
+	    <button type="submit">Submit</button>
+	</form>
+</div>
+
+{% endblock %}

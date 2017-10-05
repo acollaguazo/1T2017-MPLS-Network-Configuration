@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Provider Edge!</h1>
+<h3>{{ block.super }}</h3>
+
+<div class='container'> 
+	<a href='/home/'>Back</a> 
+</div>
+
+<div class='container'> 
+	<form method="POST" action="."> {% csrf_token %}
+	    {{ form.as_p }}
+	    <button type="submit">Submit</button>
+	</form>
+</div>
+
+<div class='row'>
+    <div class='col-sm-12'>
+        <div class='thumbnail'> 
+            <h4><p>{{salida}}</p> </h4>
+            <p><p>{{salida}}</p> 
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

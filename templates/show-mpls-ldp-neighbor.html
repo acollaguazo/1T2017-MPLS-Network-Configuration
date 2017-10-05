@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Emitir comando show mpls ldp neigbor!</h1>
+<h3>{{ block.super }}</h3>
+
+<div class='container'>
+	<a href='/provider/'>Back</a>
+</div>
+
+
+<div class='row'>
+    <div class='col-sm-12'>
+        <div class='thumbnail'> 
+            <h4><p>{{salida}}</p> </h4>
+            <p><p>{{salida}}</p> 
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

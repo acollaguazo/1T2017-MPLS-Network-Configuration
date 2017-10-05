@@ -1,0 +1,28 @@
+end
+conf t
+service password-encyption
+username ESPOL privilege 15 secret telematica
+ip domain-name SW.com
+crypto key generate rsa general-key modulus 1024
+line vty 0 15
+transport input ssh
+login local
+exit
+do wr
+end
+conf t
+hostname CE_FARMACYS_1 
+interface FastEthernet0/0
+ip address 10.12.12.2 255.255.255.0
+no shutdown
+interface loopback 0
+ip address 172.16.2.1 255.255.255.0
+exit
+router rip
+version 2
+network 10.12.0.0
+network 172.16.2.0
+no auto-summary
+exit
+do wr
+
